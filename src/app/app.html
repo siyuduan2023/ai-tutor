@@ -1,19 +1,31 @@
-<h1>{{title()}}</h1>
-<button (click)="clickButton1()">Spaghetti Carbonara</button>
-<button (click)="clickButton2()">Caprese Salad</button>
-<p>Name: {{recipe().name}}</p>
-<p>Description: {{recipe().description}}</p>
-<div>
-    <span>Servings: {{serving()}}</span>
-    <button (click)="increase()">+</button>
-    <button (click)="decrease()">-</button>
-</div>
-<p>Ingredients:</p>
-<ul>
-    @for (ingredient of adjustedIngredients(); track ingredient.name) {
-        <li>
-            <span>{{ingredient.name}}</span>
-            <span>{{ingredient.quantity}}{{ingredient.unit}}</span>
-        </li>
+<div class="card">
+    <h1>{{title()}}</h1>
+  
+    <div class="controls">
+      <button class="btn-primary" (click)="clickButton1()">Spaghetti Carbonara</button>
+      <button class="btn-primary" (click)="clickButton2()">Caprese Salad</button>
+    </div>
+  
+    <!-- Only show the recipe details if a recipe is selected -->
+    @if (recipe().id) {
+      <p class="recipe-name">{{recipe().name}}</p>
+      <p>{{recipe().description}}</p>
+  
+      <div class="servings">
+          <span>Servings: {{serving()}}</span>
+          <button class="btn-secondary" (click)="increase()">+</button>
+          <button class="btn-secondary" (click)="decrease()">-</button>
+      </div>
+  
+      <p>Ingredients:</p>
+      <ul>
+          @for (ingredient of adjustedIngredients(); track ingredient.name) {
+              <li>
+                  <span>{{ingredient.name}}</span>
+                  <span>{{ingredient.quantity | number:'1.0-2'}}{{ingredient.unit}}</span>
+              </li>
+          }
+      </ul>
     }
-</ul>>
+  </div>
+  

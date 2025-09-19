@@ -9,10 +9,11 @@ import {Component, computed, signal} from '@angular/core';
 import {RouterOutlet} from '@angular/router';
 import {RecipeModel} from './models';
 import { MOCK_RECIPES } from './mock-recipes';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, CommonModule],
   templateUrl: './app.html',
   styleUrl: './app.css',
 })
@@ -38,21 +39,25 @@ export class App {
     const spaghetti = MOCK_RECIPES.find(recipe => recipe.id === 1);
     if (spaghetti) {
       this.recipe.set(spaghetti);
+      this.serving.set(1);
     }
   }
 
   protected clickButton2() {
     console.log('Button 2 clicked');
     this.recipe.set(MOCK_RECIPES[1]);
+    this.serving.set(1);
   }
 
   protected increase(){
-    this.serving.update(serving => serving + 1);
+      this.serving.update(serving => serving + 1); 
   }
 
   protected decrease(){
-    this.serving.update(serving => serving - 1);
+    if (this.serving() <= 1) {
+      this.serving.set(1); 
+    } else {
+      this.serving.update(serving => serving - 1);
     }
-
-  
+  }
 }
