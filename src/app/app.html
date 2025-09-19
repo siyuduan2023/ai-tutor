@@ -8,3 +8,12 @@
     <button (click)="increase()">+</button>
     <button (click)="decrease()">-</button>
 </div>
+<p>Ingredients:</p>
+<ul>
+    @for (ingredient of adjustedIngredients(); track ingredient.name) {
+        <li>
+            <span>{{ingredient.name}}</span>
+            <span>{{ingredient.quantity}}{{ingredient.unit}}</span>
+        </li>
+    }
+</ul>>

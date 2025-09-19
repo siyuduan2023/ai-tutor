@@ -5,7 +5,7 @@
  * Use of this source code is governed by an MIT-style license that can be
  * found in the LICENSE file at https://angular.dev/license
  */
-import {Component, signal} from '@angular/core';
+import {Component, computed, signal} from '@angular/core';
 import {RouterOutlet} from '@angular/router';
 import {RecipeModel} from './models';
 import { MOCK_RECIPES } from './mock-recipes';
@@ -22,6 +22,16 @@ export class App {
 
   protected recipe = signal<RecipeModel>({} as RecipeModel);
   protected serving = signal(1);
+  protected adjustedIngredients = computed(() => {
+    const ingredients = this.recipe().ingredients.map(ingredients => {
+      return {
+        name: ingredients.name,
+        quantity: ingredients.quantity * this.serving(),
+        unit: ingredients.unit
+      }
+    })
+    return ingredients;
+  });
 
   protected clickButton1() {
     console.log('Button 1 clicked');
@@ -42,7 +52,7 @@ export class App {
 
   protected decrease(){
     this.serving.update(serving => serving - 1);
-  }
+    }
 
   
 }
