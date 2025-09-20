@@ -20,7 +20,7 @@
     color: #111827;
   }
   
-  .recipe-name {
+  .drink-name {
       font-size: 1.25rem;
       font-weight: 600;
       color: #374151;
@@ -50,11 +50,11 @@
   
   .btn-primary {
     color: white;
-    background-color: #4f46e5;
+    background-color: mediumseagreen;
   }
   
   .btn-primary:hover {
-    background-color: #4338ca;
+    background-color: green;
   }
   
   .btn-secondary {

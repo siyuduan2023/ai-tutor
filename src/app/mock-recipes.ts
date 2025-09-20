@@ -1,29 +1,29 @@
-import { RecipeModel } from './models';
+import { DrinkModel  } from './models';
 
-export const MOCK_RECIPES: RecipeModel[] = [
+export const MOCK_DRINKS: DrinkModel [] = [
   {
     id: 1,
-    name: 'Spaghetti Carbonara',
-    description: 'A classic Italian pasta dish.',
-    imgUrl: 'https://images.unsplash.com/photo-1633337474564-1d9478ca4e2e?q=80&w=1171&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    name: 'Mojito',
+    description: 'A refreshing Cuban highball.',
+    imgUrl: 'https://plus.unsplash.com/premium_photo-1721025986183-c33686ecf4d2?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     ingredients: [
-      { name: 'Spaghetti', quantity: 200, unit: 'g' },
-      { name: 'Guanciale', quantity: 100, unit: 'g' },
-      { name: 'Egg Yolks', quantity: 4, unit: 'each' },
-      { name: 'Pecorino Romano Cheese', quantity: 50, unit: 'g' },
-      { name: 'Black Pepper', quantity: 1, unit: 'tsp' },
+      { name: 'White Rum', quantity: 2, unit: 'oz' },
+      { name: 'Lime Juice', quantity: 1, unit: 'oz' },
+      { name: 'Sugar', quantity: 2, unit: 'tsp' },
+      { name: 'Mint Leaves', quantity: 6, unit: 'each' },
+      { name: 'Soda Water', quantity: 4, unit: 'oz' },
     ],
   },
   {
     id: 2,
-    name: 'Caprese Salad',
-    description: 'A simple and refreshing Italian salad.',
-    imgUrl: 'https://plus.unsplash.com/premium_photo-1677619680535-c3d453823b9e?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    name: 'Old Fashioned',
+    description: 'A classic cocktail of whiskey, bitters, sugar, and water.',
+    imgUrl: 'https://images.unsplash.com/photo-1621873495884-845a939892d1?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
     ingredients: [
-      { name: 'Tomatoes', quantity: 4, unit: 'each' },
-      { name: 'Fresh Mozzarella', quantity: 200, unit: 'g' },
-      { name: 'Fresh Basil', quantity: 1, unit: 'bunch' },
-      { name: 'Extra Virgin Olive Oil', quantity: 2, unit: 'tbsp' },
+      { name: 'Bourbon or Rye Whiskey', quantity: 2, unit: 'oz' },
+      { name: 'Angostura Bitters', quantity: 2, unit: 'dashes' },
+      { name: 'Sugar Cube', quantity: 1, unit: 'each' },
+      { name: 'Orange Peel', quantity: 1, unit: 'twist' },
     ],
   },
 ];

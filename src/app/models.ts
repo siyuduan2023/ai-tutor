@@ -4,7 +4,7 @@ export interface Ingredient {
     unit: string;
   }
   
-  export interface RecipeModel {
+  export interface DrinkModel  {
     id: number;
     name: string;
     description: string;

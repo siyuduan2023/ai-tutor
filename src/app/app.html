@@ -1,16 +1,17 @@
 <div class="card">
     <h1>{{title()}}</h1>
   
+
     <div class="controls">
-      <button class="btn-primary" (click)="clickButton1()">Spaghetti Carbonara</button>
-      <button class="btn-primary" (click)="clickButton2()">Caprese Salad</button>
+      <button class="btn-primary" (click)="selectDrink(1)">Mojito</button>
+      <button class="btn-primary" (click)="selectDrink(2)">Old Fashioned</button>
     </div>
   
-    <!-- Only show the recipe details if a recipe is selected -->
-    @if (recipe().id) {
-      <p class="recipe-name">{{recipe().name}}</p>
+    <!-- Only show the drink details if a drink is selected -->
+    @if (drink().id) {
+      <p class="drink-name">{{drink().name}}</p>
       <img [src]="imgUrl()" alt="A dynamic image">
-      <p>{{recipe().description}}</p>
+      <p>{{drink().description}}</p>
   
       <div class="servings">
         <button class="btn-secondary" (click)="decrease()">-</button>
