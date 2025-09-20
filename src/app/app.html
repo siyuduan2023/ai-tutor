@@ -9,6 +9,7 @@
     <!-- Only show the recipe details if a recipe is selected -->
     @if (recipe().id) {
       <p class="recipe-name">{{recipe().name}}</p>
+      <img [src]="imgUrl()" alt="A dynamic image">
       <p>{{recipe().description}}</p>
   
       <div class="servings">

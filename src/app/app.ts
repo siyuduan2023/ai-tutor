@@ -22,6 +22,9 @@ export class App {
   protected readonly title = signal('My Recipe Box');
 
   protected recipe = signal<RecipeModel>({} as RecipeModel);
+  protected readonly imgUrl = computed(() => {
+    return this.recipe().imgUrl;
+  });
   protected serving = signal(1);
   protected adjustedIngredients = computed(() => {
     const ingredients = this.recipe().ingredients.map(ingredients => {
