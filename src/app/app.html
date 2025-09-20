@@ -13,9 +13,9 @@
       <p>{{recipe().description}}</p>
   
       <div class="servings">
+        <button class="btn-secondary" (click)="decrease()">-</button>
           <span>Servings: {{serving()}}</span>
           <button class="btn-secondary" (click)="increase()">+</button>
-          <button class="btn-secondary" (click)="decrease()">-</button>
       </div>
   
       <p>Ingredients:</p>
