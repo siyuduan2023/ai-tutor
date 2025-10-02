@@ -1,0 +1,30 @@
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #f3f4f6;
+}
+
+.drink-name {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #374151;
+}
+
+img {
+  width: 300px;
+  height: 200px;
+}
+
+.servings {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }

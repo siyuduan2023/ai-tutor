@@ -5,23 +5,5 @@
 
   <!-- Only show the drink details if a drink is selected -->
   @if (drink().id) {
-    <p class="drink-name">{{drink().name}}</p>
-    <img [src]="imgUrl()" alt="A dynamic image">
-    <p>{{drink().description}}</p>
-
-    <div class="servings">
-      <button class="btn-secondary" (click)="decrease()">-</button>
-        <span>Servings: {{serving()}}</span>
-        <button class="btn-secondary" (click)="increase()">+</button>
-    </div>
-
-    <p>Ingredients:</p>
-    <ul>
-        @for (ingredient of adjustedIngredients(); track ingredient.name) {
-            <li>
-                <span>{{ingredient.name}}</span>
-                <span>{{ingredient.quantity | number:'1.0-2'}}{{ingredient.unit}}</span>
-            </li>
-        }
-    </ul>
+    <app-recipe-detail [drink]="drink()"/>
   }
