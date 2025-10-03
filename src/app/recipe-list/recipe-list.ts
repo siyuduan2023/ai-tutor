@@ -1,4 +1,5 @@
-import { Component, computed, signal } from '@angular/core';
+import { Component, computed, signal, inject } from '@angular/core';
+import { Drink } from '../drink';
 import { DrinkModel } from '../models';
 import { MOCK_DRINKS } from '../mock-recipes';
 import { CommonModule } from '@angular/common';
@@ -12,23 +13,24 @@ import { RecipeDetail } from './recipe-detail/recipe-detail';
   styleUrl: './recipe-list.css'
 })
 export class RecipeList {
+  protected readonly drinkService = inject(Drink);
+
   protected drink = signal<DrinkModel>({} as DrinkModel);
-  protected drinks = signal(MOCK_DRINKS);
   protected searchTerm = signal('');
   protected filteredDrinks = computed(() => {
     const searchText = this.searchTerm().toLowerCase();
     
     if (!searchText) {
-      return this.drinks();
+      return this.drinkService.getDrinks();
     }
     
-    return this.drinks().filter(drink => {
+    return this.drinkService.getDrinks().filter(drink => {
       return drink.name.toLowerCase().includes(searchText);
     })
   });
 
   protected selectDrink(id: number): void {
-    const selectedDrink = MOCK_DRINKS.find(d => d.id === id);
+    const selectedDrink = this.drinkService.getDrinkById(id);
     if (selectedDrink) {
       this.drink.set(selectedDrink);
     }
