@@ -2,16 +2,16 @@
   <label>Search a drink:</label>
   <input [ngModel]="searchTerm()" (ngModelChange)="searchTerm.set($event)">
 
-  <button [routerLink]="['/add-drink']">Add a Drink</button>
+  <button mat-raised-button color="primary" [routerLink]="['/add-drink']">Add a Drink</button>
 </div>
 
 @for (drink of filteredDrinks(); track drink.id) {
 <div class="controls">
-  <button class="btn-primary" [routerLink]="['/drink', drink.id]">
+  <a mat-button [routerLink]="['/drink', drink.id]">
     @if (drink.isFavorite) {
     <span>★ </span>
     }
     <span>{{drink.name}}</span>
-  </button>
+  </a>
 </div>
 }

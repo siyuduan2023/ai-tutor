@@ -3,10 +3,11 @@ import { Drink } from '../drink';
 import { DrinkModel } from '../models';
 import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
+import { MatButtonModule } from '@angular/material/button';
 
 @Component({
   selector: 'app-drink-list',
-  imports: [FormsModule, RouterLink],
+  imports: [FormsModule, RouterLink, MatButtonModule],
   templateUrl: './drink-list.html',
   styleUrl: './drink-list.css'
 })
