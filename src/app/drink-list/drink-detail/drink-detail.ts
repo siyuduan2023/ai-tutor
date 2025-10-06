@@ -2,12 +2,13 @@ import { Component, computed, input, signal, effect, inject } from '@angular/cor
 import { ActivatedRoute } from '@angular/router';
 import { DrinkModel } from '../../models';
 import { Drink } from '../../drink';
+import { DecimalPipe } from '@angular/common';
 
 @Component({
-  selector: 'app-recipe-detail',
-  imports: [],
-  templateUrl: './recipe-detail.html',
-  styleUrl: './recipe-detail.css'
+  selector: 'app-drink-detail',
+  imports: [DecimalPipe],
+  templateUrl: './drink-detail.html',
+  styleUrl: './drink-detail.css'
 })
 export class RecipeDetail {
   private readonly route = inject(ActivatedRoute);

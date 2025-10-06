@@ -5,12 +5,12 @@ import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 
 @Component({
-  selector: 'app-recipe-list',
+  selector: 'app-drink-list',
   imports: [FormsModule, RouterLink],
-  templateUrl: './recipe-list.html',
-  styleUrl: './recipe-list.css'
+  templateUrl: './drink-list.html',
+  styleUrl: './drink-list.css'
 })
-export class RecipeList {
+export class DrinkList {
   protected readonly drinkService = inject(Drink);
 
   protected drink = signal<DrinkModel>({} as DrinkModel);

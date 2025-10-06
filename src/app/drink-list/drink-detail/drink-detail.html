@@ -1,6 +1,6 @@
-<p class="drink-name">{{drink().name}}</p>
+<p class="drink-name">{{drink()!.name}}</p>
 <img [src]="imgUrl()" alt="A dynamic image">
-<p>{{drink().description}}</p>
+<p>{{drink()!.description}}</p>
 
 <div class="servings">
     <button class="btn-secondary" (click)="decrease()">-</button>
