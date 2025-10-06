@@ -3,16 +3,11 @@
 
 @for (drink of filteredDrinks(); track drink.id) {
 <div class="controls">
-  <button class="btn-primary" (click)="selectDrink(drink.id)">
+  <button class="btn-primary" [routerLink]="['/recipe', drink.id]">
     @if (drink.isFavorite) {
     <span>★ </span>
     }
     <span>{{drink.name}}</span>
   </button>
 </div>
-}
-
-<!-- Only show the drink details if a drink is selected -->
-@if (drink().id) {
-<app-recipe-detail [drink]="drink()" />
 }

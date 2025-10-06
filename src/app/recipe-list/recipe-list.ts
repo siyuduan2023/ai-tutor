@@ -1,14 +1,12 @@
 import { Component, computed, signal, inject } from '@angular/core';
 import { Drink } from '../drink';
 import { DrinkModel } from '../models';
-import { MOCK_DRINKS } from '../mock-recipes';
-import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { RecipeDetail } from './recipe-detail/recipe-detail';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-recipe-list',
-  imports: [CommonModule, RecipeDetail, FormsModule],
+  imports: [FormsModule, RouterLink],
   templateUrl: './recipe-list.html',
   styleUrl: './recipe-list.css'
 })
@@ -29,10 +27,4 @@ export class RecipeList {
     })
   });
 
-  protected selectDrink(id: number): void {
-    const selectedDrink = this.drinkService.getDrinkById(id);
-    if (selectedDrink) {
-      this.drink.set(selectedDrink);
-    }
-  }
 }
