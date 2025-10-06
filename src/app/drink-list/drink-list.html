@@ -1,5 +1,9 @@
-<label>Search a drink:</label>
-<input [ngModel]="searchTerm()" (ngModelChange)="searchTerm.set($event)">
+<div class="search-add">
+  <label>Search a drink:</label>
+  <input [ngModel]="searchTerm()" (ngModelChange)="searchTerm.set($event)">
+
+  <button [routerLink]="['/add-drink']">Add a Drink</button>
+</div>
 
 @for (drink of filteredDrinks(); track drink.id) {
 <div class="controls">

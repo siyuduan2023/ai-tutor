@@ -13,6 +13,14 @@ h1 {
   margin-bottom: 1rem;
 }
 
+.search-add {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
 button {
   padding: 0.5rem 1rem;
   border: 1px solid transparent;
