@@ -1,17 +1,17 @@
 <div class="search-add">
-  <label>Search a drink:</label>
-  <input [ngModel]="searchTerm()" (ngModelChange)="searchTerm.set($event)">
-
-  <button mat-raised-button color="primary" [routerLink]="['/add-drink']">Add a Drink</button>
+  <input placeholder="search..." [ngModel]="searchTerm()" (ngModelChange)="searchTerm.set($event)">
+  <button matButton="elevated" color="primary" [routerLink]="['/add-drink']">Add a Drink</button>
 </div>
 
-@for (drink of filteredDrinks(); track drink.id) {
-<div class="controls">
-  <a mat-button [routerLink]="['/drink', drink.id]">
-    @if (drink.isFavorite) {
-    <span>★ </span>
-    }
-    <span>{{drink.name}}</span>
-  </a>
+<div class="drinks-container">
+  @for (drink of filteredDrinks(); track drink.id) {
+  <div class="controls">
+   <a mat-button [routerLink]="['/drink', drink.id]">
+     @if (drink.isFavorite) {
+     <span>★ </span>
+     }
+     <span>{{drink.name}}</span>
+   </a>
+ </div>
+  }
 </div>
-}

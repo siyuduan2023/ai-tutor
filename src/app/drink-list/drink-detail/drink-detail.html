@@ -1,19 +1,20 @@
 <p class="drink-name">{{drink()!.name}}</p>
-<img [src]="imgUrl()" alt="A dynamic image">
 <p>{{drink()!.description}}</p>
+<img [src]="imgUrl()" alt="A dynamic image">
+
 
 <div class="servings">
-    <button class="btn-secondary" (click)="decrease()">-</button>
+    <button matButton="tonal" (click)="decrease()">-</button>
     <span>Servings: {{serving()}}</span>
-    <button class="btn-secondary" (click)="increase()">+</button>
+    <button matButton="tonal" (click)="increase()">+</button>
 </div>
 
-<p>Ingredients:</p>
+<p class="ingredients-title">Ingredients:</p>
 <ul>
     @for (ingredient of adjustedIngredients(); track ingredient.name) {
     <li>
         <span>{{ingredient.name}}</span>
-        <span>{{ingredient.quantity | number:'1.0-2'}}{{ingredient.unit}}</span>
+        <span>{{ingredient.quantity | number:'1.0-2'}} {{ingredient.unit}}</span>
     </li>
     }
 </ul>

@@ -17,14 +17,25 @@ li {
 }
 
 img {
-  width: 300px;
-  height: 200px;
+  width: 400px;
+  height: 275px;
+}
+
+button[matButton] {
+    border-radius: 2rem;
+    padding: 0;
+    background-color: #F1FFF3;
 }
 
 .servings {
     display: flex;
     gap: 0.5rem;
     align-items: center;
+    justify-content: center;
     margin-top: 1rem;
     margin-bottom: 1rem;
   }
+
+.ingredients-title {
+    text-align: start;
+}

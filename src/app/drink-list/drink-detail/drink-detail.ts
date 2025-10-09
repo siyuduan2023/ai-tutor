@@ -1,4 +1,5 @@
-import { Component, computed, input, signal, effect, inject } from '@angular/core';
+import { Component, computed, signal, inject } from '@angular/core';
+import {MatButtonModule} from '@angular/material/button';
 import { ActivatedRoute } from '@angular/router';
 import { DrinkModel } from '../../models';
 import { Drink } from '../../drink';
@@ -6,7 +7,7 @@ import { DecimalPipe } from '@angular/common';
 
 @Component({
   selector: 'app-drink-detail',
-  imports: [DecimalPipe],
+  imports: [DecimalPipe, MatButtonModule],
   templateUrl: './drink-detail.html',
   styleUrl: './drink-detail.css'
 })
