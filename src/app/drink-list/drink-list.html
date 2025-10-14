@@ -6,12 +6,12 @@
 <div class="drinks-container">
   @for (drink of filteredDrinks(); track drink.id) {
   <div class="controls">
-   <a mat-button [routerLink]="['/drink', drink.id]">
+   <button mat-button [routerLink]="['/drink', drink.id]">
      @if (drink.isFavorite) {
      <span>★ </span>
      }
      <span>{{drink.name}}</span>
-   </a>
+    </button>
  </div>
   }
 </div>

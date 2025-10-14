@@ -1,20 +1,28 @@
-<p class="drink-name">{{drink()!.name}}</p>
-<p>{{drink()!.description}}</p>
-<img [src]="imgUrl()" alt="A dynamic image">
+@if (drink()!.id <= 5) { <div>
+    <p class="drink-name">{{drink()!.name}}</p>
+    <p>{{drink()!.description}}</p>
+    <img [src]="imgUrl()" alt="A dynamic image">
 
 
-<div class="servings">
-    <button matButton="tonal" (click)="decrease()">-</button>
-    <span>Servings: {{serving()}}</span>
-    <button matButton="tonal" (click)="increase()">+</button>
-</div>
+    <div class="servings">
+        <button matButton="tonal" (click)="decrease()">-</button>
+        <span>Servings: {{serving()}}</span>
+        <button matButton="tonal" (click)="increase()">+</button>
+    </div>
 
-<p class="ingredients-title">Ingredients:</p>
-<ul>
-    @for (ingredient of adjustedIngredients(); track ingredient.name) {
-    <li>
-        <span>{{ingredient.name}}</span>
-        <span>{{ingredient.quantity | number:'1.0-2'}} {{ingredient.unit}}</span>
-    </li>
+    <p class="ingredients-title">Ingredients:</p>
+    <ul>
+        @for (ingredient of adjustedIngredients(); track ingredient.name) {
+        <li>
+            <span>{{ingredient.name}}</span>
+            <span>{{ingredient.quantity | number:'1.0-2'}} {{ingredient.unit}}</span>
+        </li>
+        }
+    </ul>
+    </div>
     }
-</ul>
+    @else {
+    <div>
+        <p>No drink data found</p>
+    </div>
+    }

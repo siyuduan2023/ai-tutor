@@ -1,0 +1,32 @@
+.card {
+  padding: 1rem;
+}
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+}
+
+button {
+  border: 1px solid lightpink;
+  border-radius: 0.375rem;
+  font-weight: 500;
+  cursor: pointer;
+  :hover {
+    background-color: lightpink;
+  }
+  
+}
+
+
+label {
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+input {
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+}

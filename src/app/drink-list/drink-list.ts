@@ -4,10 +4,11 @@ import { DrinkModel } from '../models';
 import { FormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
+import {MatTooltipModule} from '@angular/material/tooltip';
 
 @Component({
   selector: 'app-drink-list',
-  imports: [FormsModule, RouterLink, MatButtonModule],
+  imports: [FormsModule, RouterLink, MatButtonModule, MatTooltipModule],
   templateUrl: './drink-list.html',
   styleUrl: './drink-list.css'
 })

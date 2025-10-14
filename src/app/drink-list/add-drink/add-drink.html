@@ -1,9 +1,15 @@
-<form [formGroup]="addDrinkForm" (ngSubmit)="onSubmit()">
-    <label for="name">Name: </label>
-    <input id="name" type="text" formControlName="name" />
+<div class="card">
+  <form [formGroup]="addDrinkForm" (ngSubmit)="onSubmit()">
+    <div class="form-field">
+      <label for="name">Name:</label>
+      <input id="name" type="text" formControlName="name" />
+    </div>
 
-    <label for="description">Description: </label>
-    <input id="description" type="description" formControlName="description" />
+    <div class="form-field">
+      <label for="description">Description:</label>
+      <input id="description" type="text" formControlName="description" />
+    </div>
 
-    <!-- <button mat-raised-button color="primary" type="submit" [disabled]="addDrinkForm.invalid">Save</button> -->
-</form>
+    <button matButton="elevated" color="primary" type="submit" [disabled]="addDrinkForm.invalid">Save</button>
+  </form>
+</div>
