@@ -1,5 +1,5 @@
+
 import { Component, computed, signal, inject } from '@angular/core';
-import {MatButtonModule} from '@angular/material/button';
 import { ActivatedRoute } from '@angular/router';
 import { DrinkModel } from '../../models';
 import { Drink } from '../../drink';
@@ -7,35 +7,31 @@ import { DecimalPipe } from '@angular/common';
 
 @Component({
   selector: 'app-drink-detail',
-  imports: [DecimalPipe, MatButtonModule],
+  imports: [DecimalPipe],
   templateUrl: './drink-detail.html',
   styleUrl: './drink-detail.css'
 })
-export class RecipeDetail {
+export class DrinkDetail {
   private readonly route = inject(ActivatedRoute);
   protected readonly drinkService = inject(Drink);
   protected readonly drink = signal<DrinkModel | undefined>(undefined);
-  // readonly drink = input.required<DrinkModel>();
-  protected readonly imgUrl = computed(() => {
-    return this.drink()!.imgUrl;
-  });
+
+  protected readonly imgUrl = computed(() => this.drink()?.imgUrl);
   protected serving = signal(1);
 
   protected adjustedIngredients = computed(() => {
-    const ingredients = this.drink()!.ingredients.map(ingredients => {
-      return {
-        name: ingredients.name,
-        quantity: ingredients.quantity * this.serving(),
-        unit: ingredients.unit
-      }
-    })
-    return ingredients;
+    const drink = this.drink();
+    if (!drink) return [];
+
+    return drink.ingredients.map(ingredient => ({
+      ...ingredient,
+      quantity: ingredient.quantity * this.serving(),
+    }));
   });
-  
+
   constructor() {
     const drinkId = this.route.snapshot.paramMap.get('id');
     if (drinkId) {
-      // Find the product using the service and set our signal
       const foundProduct = this.drinkService.getDrinkById(+drinkId);
       this.drink.set(foundProduct);
     }
@@ -46,9 +42,7 @@ export class RecipeDetail {
   }
 
   protected decrease() {
-    if (this.serving() <= 1) {
-      this.serving.set(1);
-    } else {
+    if (this.serving() > 1) {
       this.serving.update(serving => serving - 1);
     }
   }
