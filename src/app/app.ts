@@ -17,5 +17,5 @@ import { RouterLink } from '@angular/router';
   styleUrl: './app.css',
 })
 export class App {
-  protected readonly title = signal('The Remote Bar');
+  protected readonly title = signal('My Remote Bar');
 }
